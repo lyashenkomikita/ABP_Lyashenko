@@ -23,6 +23,10 @@ public class Main {
                 case 4:
                     Lab_4.run();
                     break;
+
+                case 5:
+                    Lab_5.run();
+                    break;
             }
         }
         else {
