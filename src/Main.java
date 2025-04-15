@@ -15,6 +15,10 @@ public class Main {
                 case 1:
                     Lab_1.run();
                     break;
+
+                case 2:
+                    Lab_2.run();
+                    break;
             }
         }
         else {
