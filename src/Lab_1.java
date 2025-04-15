@@ -180,7 +180,7 @@ public class Lab_1 {
                         int [] Y = new int[5];
 
                         for (int i = 0; i < 5; i++) {
-                            System.out.println("Enter X" + i + "coordinate: ");
+                            System.out.println("Enter X " + i + " coordinate: ");
                             X[i] = sc.nextInt();
                             System.out.println("Enter Y" + i + "coordinate: ");
                             Y[i] = sc.nextInt();
