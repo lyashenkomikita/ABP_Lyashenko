@@ -27,6 +27,10 @@ public class Main {
                 case 5:
                     Lab_5.run();
                     break;
+
+                case 6:
+                    Laba_6.run();
+                    break;
             }
         }
         else {
