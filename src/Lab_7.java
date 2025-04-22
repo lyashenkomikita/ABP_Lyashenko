@@ -41,26 +41,37 @@ public class Lab_7 extends JFrame {
            String person = name.getText();
            double max = 0;
            int maxIndex = -1;
+           boolean check = true;
 
            double cash = 0;
 
+           StringBuilder errors = new StringBuilder();
+
            for (int i = 0; i < 12; i++) {
-               try {
-                   cash = Double.parseDouble(month[i].getText());
-                   if (cash > max) {
-                       max = cash;
-                       maxIndex = i;
+               String enter = month[i].getText().trim();
+               if (!enter.isEmpty()) {
+                   try {
+                       cash = Double.parseDouble(enter);
+                       if (cash < 0) {
+                           check = false;
+                           errors.append("Invalid input");
+                       } else if (cash > max && cash > 0) {
+                           max = cash;
+                           maxIndex = i;
+                       }
+
+                   } catch (NumberFormatException ex) {
+                       check = false;
+                       errors.append("Invalid input");
                    }
-
-               } catch (NumberFormatException ex) {}
-
+               }
            }
-           if (maxIndex > -1) {
+           if (check == true && maxIndex > -1) {
                String Mmonth = monnames[maxIndex];
                new Second(person, Mmonth, max). setVisible(true);
            }
            else {
-               JOptionPane.showMessageDialog(this, "Invaild input");
+               JOptionPane.showMessageDialog(this, "Invalid input");
            }
         });
     }
