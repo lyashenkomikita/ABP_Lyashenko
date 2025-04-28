@@ -35,6 +35,14 @@ public class Main {
                 case 7:
                     Lab_7.run();
                     break;
+
+                case 8:
+                    Lab_8.run();
+                    break;
+
+                default:
+                    System.out.println("Invalid number");
+                    break;
             }
         }
         else {
