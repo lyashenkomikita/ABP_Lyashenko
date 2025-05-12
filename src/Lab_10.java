@@ -25,8 +25,8 @@ public class Lab_10 extends JFrame {
         }
 
         int i = 0;
+        File input = new File("C:\\Users\\Admin\\ABP\\src\\INPUT.txt");
         try {
-            File input = new File("C:\\Users\\Admin\\ABP\\src\\INPUT.txt");
             Scanner sc = new Scanner(input);
             while (sc.hasNextLine() && i < grades.length) {
                 String line = sc.nextLine();
@@ -55,11 +55,36 @@ public class Lab_10 extends JFrame {
             e.printStackTrace();
         }
 
-        Lab_10 lab = new Lab_10("Lab_10", students, grades);
+        int serednye = 0;
+        String beststud = "";
+        int max = 0;
+        int sum = grades[0];
+        for (int j = 1; j < grades.length; j++) {
+            sum += grades[j];
+            if (grades[j] > max) {
+                max = grades[j];
+                beststud = students[j];
+            }
+        }
+        serednye = sum / grades.length;
+
+
+
+        Lab_10 lab = new Lab_10("Lab_10", students, grades, serednye, beststud);
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(input, true))) {
+            writer.newLine();
+            writer.write("Best student: " + beststud);
+            writer.newLine();
+            writer.write("Serednye: " + serednye);
+        } catch (IOException e) {
+            System.out.println("Some mistakes");
+            e.printStackTrace();
+        }
 
     }
 
-    public Lab_10(String s, String[] names, int[] grades) {
+    public Lab_10(String s, String[] names, int[] grades, int serednye, String beststud) {
         super(s);
         setSize(1000, 1000);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -71,20 +96,7 @@ public class Lab_10 extends JFrame {
         add(check);
 
         check.addActionListener(e -> {
-            int max = 0;
-            int sum = grades[0];
-            int ser = 0;
-            String topstudent = names[0];
-
-            for (int i = 1; i < grades.length; i++) {
-                sum += grades[i];
-                if (grades[i] > max) {
-                    max = grades[i];
-                    topstudent = names[i];
-                }
-            }
-            ser = sum / grades.length;
-            JOptionPane.showMessageDialog(this, "Maximum grade have " + topstudent + "\n Seredniy bal " + ser + "\n Sum: " + sum);
+            JOptionPane.showMessageDialog(this, "Maximum grade have " + beststud + "\n Seredniy bal " + serednye);
         });
 
         int y = 100;
