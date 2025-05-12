@@ -29,7 +29,7 @@ public class Main {
                     break;
 
                 case 6:
-                    Laba_6.run();
+                    Lab_6.run();
                     break;
 
                 case 7:
@@ -38,6 +38,14 @@ public class Main {
 
                 case 8:
                     Lab_8.run();
+                    break;
+
+                case 9:
+                    Lab_9.run();
+                    break;
+
+                case 10:
+                    Lab_10.run();
                     break;
 
                 default:

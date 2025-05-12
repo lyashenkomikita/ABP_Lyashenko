@@ -1,11 +1,10 @@
 import java.awt.*;
 import javax.swing.*;
-import java.awt.event.*;
 
-public class Laba_6 extends JFrame {
+public class Lab_6 extends JFrame {
     private Color col = Color.YELLOW;
 
-    Laba_6(String s) {
+    Lab_6(String s) {
         super(s);
         setSize(1000, 800);
         setLocation(300, 300);
@@ -63,6 +62,6 @@ public class Laba_6 extends JFrame {
     }
 
     public static void run() {
-        Laba_6 s = new Laba_6("Lab 6");
+        Lab_6 s = new Lab_6("Lab 6");
     }
 }
