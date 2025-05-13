@@ -105,7 +105,7 @@ public class Lab_1 {
                 }
             }
         }
-        System.out.println("Max Dist from points " + point1 + "and" + point2);
+        System.out.println("Max Dist from points " + point1 + " and " + point2);
     }
 
     public static void run() {
